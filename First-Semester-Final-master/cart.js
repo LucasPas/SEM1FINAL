@@ -15,8 +15,13 @@ class Cart{
       total= total+(this.ItemList[c]*this.ItemQuantity[c]);
     }
   }
-  subCart(d){
-    let subCart = new Cart()
-  }
+  subCart(days){
+    let subCart = new Cart([],[]);
+    for(a=0; a < this.ItemList.length; a++){
+      if(this.ItemList[a].shipping == days){
+        subCart.push(this.ItemList[a];
+      }
+    }
+    return subCart
   }
 }
