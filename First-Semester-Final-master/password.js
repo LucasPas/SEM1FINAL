@@ -14,18 +14,18 @@ class Password{
     }
   }
   validPrivateKey(){
-    var dash = 0
-    var num = 0
-    let key= makePrivateKey();
-    while(this.privatekey[4]=="-" && this.privatekey[9]=="-"){
-        dash=true
+    let key = this.privatekey
+    for(let i=0; i<this.privatekey.length;i++){
+    if(key[4] != "-" || key[9] != "-"){
+      return false
     }
-    for(i=0;i<=3;i++){
-      if(this.privatekey[i].isinteger() == 
-    }
+    else{
+      if(number.isNaN(key[i])){
+        return false
+      }
     }
   }
-
+return true;
 
   //Static function below this comment.
   static makePrivateKey(){
